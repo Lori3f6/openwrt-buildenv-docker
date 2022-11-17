@@ -40,8 +40,5 @@ WORKDIR openwrt
 # Change branch as needed
 RUN git checkout ${REV}
 
-# Update default feeds
-RUN ./scripts/feeds update -a
-
 # Start container with doing nothing by default
 CMD ["sleep","infinity"]

@@ -7,14 +7,14 @@ git clone git@github.com:Lori3f6/openwrt-buildenv-docker.git
 cd openwrt-buildenv-docker
 docker build . --tag <image-tag>
 ```
-You could use build parameter `REV` to switch from branch/tags automatically
-For example use `--build-arg REV=22.03.2` to checkout to 22.03.2 branch/tag.  
+You could use build parameter `REV` to switch from branch/tags automatically.   
+For example use `--build-arg REV=v22.03.2` to checkout to v22.03.2 tag.  
 Use build parameter `APK_MIRROR` to switch a proper apk mirror could help you building the enviroment more smoothly.    
 `image-tag` is a custom name for your built image, choose a name you like and keep it in mind. For example `env/openwrt-build:bleedingEdge`.  
 
 For examaple with all settings:
 ```
-docker build . --tag --build-arg REV=22.03.2 --build-arg APK_MIRROR=mirror.nju.edu.cn <image-tag>
+docker build . --build-arg REV=v22.03.2 --build-arg APK_MIRROR=mirror.nju.edu.cn --tag <image-tag>
 ```
 complete version ^
 
@@ -27,6 +27,6 @@ Use `docker exec` to enter shell inside container
 ```
 docker exec -i -t <custom-name> ash
 ```
-Then follow the [OpenWrt Developer Guide](https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem) to configure your OpenWrt System (from `./scripts/feeds install -a` step).
+Then follow the [OpenWrt Developer Guide](https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem) to configure your OpenWrt System (from Update Feeds step).
 
 
